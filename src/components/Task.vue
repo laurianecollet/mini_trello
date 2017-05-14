@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div v-if="task.visibilite === true">
 		<ul class="collection col s12">
 			<li class="collection-item avatar">
 				<span class="title">Tâche : {{task.intitule}}</span>
