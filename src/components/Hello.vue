@@ -1,14 +1,16 @@
 <template>
   <div class="hello">
     <navbar></navbar>
+    <liste></liste>
   </div>
 </template>
 
 <script>
   import Navbar from './Navbar'
+  import Liste from './Liste'
   export default {
     name: 'hello',
-    components: { navbar: Navbar },
+    components: { navbar: Navbar, liste: Liste },
   }
 
 </script>
