@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <navbar></navbar>
+    <formulaire></formulaire>
     <liste></liste>
   </div>
 </template>
@@ -8,9 +9,13 @@
 <script>
   import Navbar from './Navbar'
   import Liste from './Liste'
+  import Form from './Form'
+
+
+
   export default {
     name: 'hello',
-    components: { navbar: Navbar, liste: Liste },
+    components: { navbar: Navbar, liste: Liste, formulaire: Form },
   }
 
 </script>

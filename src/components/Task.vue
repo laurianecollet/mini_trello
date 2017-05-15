@@ -4,7 +4,7 @@
 			<li class="collection-item avatar">
 				<span class="title">Tâche : {{task.intitule}}</span>
 				<p>Criticité : {{task.criticite}}</p>
-				<p>Nombre d'heures : {{task.nbheure}}</p>
+				<p>Nombre d'heures : {{task.nbheure}} heures</p>
 				<p>Visibilité : {{task.visibilite}}</p>
 				</p>
 			</li>

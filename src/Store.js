@@ -62,8 +62,8 @@ export const Store = {
 				"nbheure": 8,
 				"visibilite": false,
 			}
-		]
-	}
+		],
+	},
 
 
 };
