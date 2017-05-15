@@ -1,25 +1,30 @@
 <template>
 	<div>
 		<nav>
-			<div class="nav-wrapper #ffb74d orange lighten-2">
+			<div class="nav-wrapper" v-bind:class="{'#ffb74d orange lighten-2': datas.tasks.length != 1, '#d50000 red accent-4': datas.tasks.length === 1}">
 				<a>Mini trello</a>
-				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li>
-						<a href="sass.html"></a>
-					</li>
-					<li>
-						<a href="badges.html"></a>
-					</li>
-					<li>
-						<a href="collapsible.html"></a>
-					</li>
-				</ul>
 			</div>
 		</nav>
 	</div>
 </template>
 
 <script>
+	import { Bus } from '@/Bus.js'
+	import { Store } from '@/Store.js'
+	export default {
+		name: 'navbar',
+		data() {
+			return {
+				datas: Store.datas,
+			}
+		},
+		created() {
+			let toastContent = ('<i class="material-icons">add_alert</i>');
+			Bus.$on('notification', () =>
+				Materialize.toast(`New task ${toastContent}`, 1000),
+			);
+		},
+	}
 
 </script>
 

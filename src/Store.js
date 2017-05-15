@@ -12,7 +12,7 @@ export const Store = {
 				"intitule": "Faire une Liste",
 				"criticite": 8,
 				"nbheure": 2,
-				"visibilite": false,
+				"visibilite": true,
 			},
 			{
 				"intitule": "Faire un formulaire",
@@ -24,7 +24,7 @@ export const Store = {
 				"intitule": "Faire un composant Task",
 				"criticite": 3,
 				"nbheure": 8,
-				"visibilite": false,
+				"visibilite": true,
 			},
 			{
 				"intitule": "Faire une route critique",
@@ -42,7 +42,7 @@ export const Store = {
 				"intitule": "Importer materialize",
 				"criticite": 5,
 				"nbheure": 1,
-				"visibilite": false,
+				"visibilite": true,
 			},
 			{
 				"intitule": "Stocker les tâches dans un Store",
@@ -60,7 +60,7 @@ export const Store = {
 				"intitule": "Créer un composant Search",
 				"criticite": 2,
 				"nbheure": 8,
-				"visibilite": false,
+				"visibilite": true,
 			}
 		],
 	},

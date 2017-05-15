@@ -25,13 +25,15 @@
 					</p>
 				</div>
 			</div>
-			<button @click="add" class="btn waves-effect waves-light .orange.lighten-2" type="submit" name="action">Envoyer</button>
+			<button @click="add" class="btn waves-effect waves-light orange lighten-2" type="submit" name="action">Envoyer</button>
 		</form>
+		<p>Hé oh ! Doucement</p>
 	</div>
 </template>
 
 <script>
 	import { Store } from '@/Store.js'
+	import { Bus } from '@/Bus.js'
 
 	export default {
 		name: 'task',
@@ -48,8 +50,14 @@
 		methods: {
 			add() {
 				Store.datas.tasks.push(this.newTask)
-								console.log(Store.datas.tasks)
-
+				console.log(Store.datas.tasks)
+				Bus.$emit('notification');
+				this.newTask = { // remettre les champs à vide ca ne marche pas 
+					intitule: '',
+					criticite: '',
+					nbheure: '',
+					visibilite: true,
+				}
 			}
 		}
 	}
