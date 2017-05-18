@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
     <navbar></navbar>
+    <range-input></range-input>
+    <search></search>
     <formulaire></formulaire>
     <liste></liste>
   </div>
@@ -10,12 +12,13 @@
   import Navbar from './Navbar'
   import Liste from './Liste'
   import Form from './Form'
-
+  import Search from './Search'
+  import RangeInput from './Range'
 
 
   export default {
     name: 'hello',
-    components: { navbar: Navbar, liste: Liste, formulaire: Form },
+    components: { navbar: Navbar, liste: Liste, formulaire: Form, search: Search, rangeInput: RangeInput },
   }
 
 </script>

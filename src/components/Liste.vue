@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="row">
-			<task v-for="task in datas.tasks" :key="task.id" :task="task"></task>
+			<task v-for="task in tasks" :key="task.id" :task="task"></task>
 
 		</div>
 	</div>
@@ -17,6 +17,11 @@
 		data() {
 			return {
 				datas: Store.datas,
+			}
+		},
+		computed: {
+			tasks() {
+				return Store.search();
 			}
 		},
 	}

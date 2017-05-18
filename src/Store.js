@@ -12,13 +12,13 @@ export const Store = {
 				"intitule": "Faire une Liste",
 				"criticite": 8,
 				"nbheure": 2,
-				"visibilite": true,
+				"visibilite": false,
 			},
 			{
 				"intitule": "Faire un formulaire",
 				"criticite": 4,
 				"nbheure": 4,
-				"visibilite": true,
+				"visibilite": false,
 			},
 			{
 				"intitule": "Faire un composant Task",
@@ -63,7 +63,37 @@ export const Store = {
 				"visibilite": true,
 			}
 		],
+
+		counter: 0,
+		word: '',
+		range: 0,
+
 	},
+	search() {
+		let tab = [];
+		let reg = new RegExp(this.datas.word, "i");
+
+		if (this.datas.word.length >= 3) {
+			console.log('hello')
+			return tab = this.datas.tasks.filter((elt) => reg.test(elt.intitule));
+		} else {
+			tab = this.datas.tasks;
+		}
+		if (this.datas.range > 0) {
+			console.log('coucou')
+			tab = this.datas.tasks.filter((elt) => elt.nbheure >= this.datas.range)
+		} else {
+			tab = this.datas.tasks
+		}
+		console.log(tab)
+
+		return tab;
+	},
+
+
+
+
+
 
 
 };

@@ -11,21 +11,27 @@
 
 <script>
 	import { Store } from '@/Store.js'
+	import { Bus } from '@/Bus.js'
+
 
 	export default {
 		name: 'task',
 		props: ['task'],
 		data() {
 			return {
-				counter: 0,
+				datas: Store.datas
 			}
-		}, methods: {
+		},
+		methods: {
 			deleteTask: function (theTask) {
+				Store.datas.counter += 1;
+				console.log(Store.datas.counter)
 				let position = Store.datas.tasks.indexOf(theTask);
 				if (position != -1) { // Si la position est trouvé on supprime la tache à la position donnée
 					Store.datas.tasks.splice(position, 1);
-					this.counter += 1;
-					console.log(this.counter)
+					if (Store.datas.counter >= 3) {
+						Bus.$emit('counter3');
+					}
 				}
 			},
 		}

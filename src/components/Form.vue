@@ -12,6 +12,7 @@
 				</div>
 				<div class="input-field col s12">
 					<input id="last_name" type="text" class="validate" v-model="newTask.nbheure">
+					<!--mettre v-model.number permet d'éviter de parse-->
 					<label for="last_name">Nombre d'heure</label>
 				</div>
 				<div class="input-field col s12">
@@ -27,7 +28,7 @@
 			</div>
 			<button @click="add" class="btn waves-effect waves-light orange lighten-2" type="submit" name="action">Envoyer</button>
 		</form>
-		<p>Hé oh ! Doucement</p>
+		<p v-if="counterMessage === true">Hé oh ! Doucement</p>
 	</div>
 </template>
 
@@ -37,6 +38,9 @@
 
 	export default {
 		name: 'task',
+		created() {
+			Bus.$on('counter3', () => this.counterMessage = true)
+		},
 		data() {
 			return {
 				newTask: {
@@ -45,6 +49,8 @@
 					nbheure: '',
 					visibilite: true,
 				},
+				counterMessage: false,
+
 			}
 		},
 		methods: {
@@ -52,7 +58,7 @@
 				Store.datas.tasks.push(this.newTask)
 				console.log(Store.datas.tasks)
 				Bus.$emit('notification');
-				this.newTask = { // remettre les champs à vide ca ne marche pas 
+				this.newTask = {
 					intitule: '',
 					criticite: '',
 					nbheure: '',

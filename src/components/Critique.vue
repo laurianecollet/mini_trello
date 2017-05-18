@@ -3,16 +3,7 @@
 		<navbar></navbar>
 		<div class="row">
 			<formulaire></formulaire>
-			<task v-for="task in datas.tasks" :key="task.id" :task="task">
-				<div v-if="task.visibilite === true">
-					<div class="collection col s12">
-						<p class="col s3"><span class="title">{{datas.tasks.intitule}}</span></p>
-						<p class="col s2">Criticité : {{datas.tasks.criticite}}</p>
-						<p class="col s3">Nombre d'heures : {{datas.tasks.nbheure}} h</p>
-						<p><button class="btn waves-effect waves-light orange lighten-2" type="submit" name="action"><i class="material-icons">done</i></button></p>
-					</div>
-				</div>
-			</task>
+			<task v-for="task in datas.tasks" :key="task.id" :task="task"></task>
 		</div>
 	</div>
 </template>
