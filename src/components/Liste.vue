@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="row">
-			<task v-for="task in tasks" :key="task.id" :task="task"></task>
+			<task v-for="task in tasks" :key="task.id" :task="task" v-if="task.visibilite === true"></task>
 
 		</div>
 	</div>

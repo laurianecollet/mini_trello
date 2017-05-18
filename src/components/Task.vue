@@ -1,5 +1,5 @@
 <template>
-	<div v-if="task.visibilite === true">
+	<div>
 		<div class="collection col s12">
 			<p class="col s3"><span class="title">{{task.intitule}}</span></p>
 			<p class="col s2">Criticité : {{task.criticite}}</p>

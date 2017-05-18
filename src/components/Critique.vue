@@ -3,7 +3,7 @@
 		<navbar></navbar>
 		<div class="row">
 			<formulaire></formulaire>
-			<task v-for="task in datas.tasks" :key="task.id" :task="task"></task>
+			<task v-for="task in datas.tasks" :key="task.id" :task="task" v-if="task.criticite >= 7 && task.criticite <= 10"></task>
 		</div>
 	</div>
 </template>
